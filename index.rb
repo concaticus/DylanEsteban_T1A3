@@ -34,4 +34,23 @@ while true
 
     #menu user-input + Gem
     menu_input = prompt.select("Do you have a favourite league, team or player? Hit display to view your prior searches!", %w(League Team Player Display Exit))
+
+
+case  menu_input
+    when 'League'
+    puts "Search league by country:"
+    
+    
+    when 'Team' 
+    puts "Search EPL team:"
+    team = gets.chomp
+
+    when 'Player'
+    puts "Search player"
+    player = gets.chomp
+
+
+    when 'Display'
+
+end
 end
