@@ -61,20 +61,21 @@ while true
     puts "Search player"
     player = gets.chomp
 
+#building the exit feature to allow for quitting program
 when 'Exit'
     puts "Are you sure you want to quit? Type 'YES' to exit or type any key to return to main-menu"
     quit_choice = gets.chomp
-    break if quit_choice.downcase == 'yes' #break statement to terminate the loop
+    break if quit_choice.downcase == 'yes' #break statement to terminate loop
     else
-    # puts "Error: Invalid Input. Please try again."   
+    # puts "Error: Invalid Input. Please try again."
     end
     puts "Press any key to continue"
     # gets 
     system "clear"
     
     end
-    
-    puts "Goodbye!"
+    system "clear"
+
 
 
 
