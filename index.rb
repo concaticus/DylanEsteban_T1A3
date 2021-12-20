@@ -1,4 +1,5 @@
 
+
 #gems to grab: colorize, ppty-prompt, Ruby API, Ruby Table
 #readme: include versions of gems to install
 
@@ -15,11 +16,12 @@ require ('api_football_v3')
 end
 # prompt =
 
-prompt = TTY::Prompt.new
+
 
 require_relative('methods')
 
 #initialized gems
+prompt = TTY::Prompt.new
 pastel = Pastel.new
 font = TTY::Font.new(:doom)
 
@@ -37,12 +39,8 @@ while true
     # puts pastel.decorate("Hi! Welcome to Footy Stats Look-Up!", :green, :on_white, :bold)
     puts pastel.yellow.bold(font.write("Footy Stats Look-Up!"))
 
-
-    if ( fav_league.empty? && fav_team.empty? && fav_player.empty?)
-        puts "You have no prior searches. Let's change that!".red.italic
-    else
-        puts "You currently have #{out_put(fav_league.length, 'league')}, #{out_put(fav_team.length, 'team')} & #{out_put(fav_player.length, 'player')}"
-    end
+    #ternary opterator employed to keep code DRY
+    puts (fav_league.empty? && fav_team.empty? && fav_player.empty?) ? "You have no prior searches. Let's change that!".red.italic : "You currently have: #{out_put(fav_league.length, 'league').red.italic}, #{out_put(fav_team.length, 'team').green.italic} & #{out_put(fav_player.length, 'player').blue.italic}"
 
     #menu user-input + Gem
     menu_input = prompt.select("Do you have a favourite league, team or player? Hit display to view your prior searches!", %w(League Team Player Display Exit))
@@ -75,11 +73,3 @@ when 'Exit'
     
     end
     system "clear"
-
-
-
-
-
-
-
-
