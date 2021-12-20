@@ -1,7 +1,6 @@
 # Terminal Application
 
-Link to repository:
-https://github.com/dylan-devs/DylanEsteban_T1A3
+Link to repository can be accessed [here](https://github.com/dylan-devs/DylanEsteban_T1A3)
 
 ## Software Development Plan
 
@@ -19,7 +18,7 @@ Upon opening the application, the target audience will be received with straight
 
 ## Features
 
-### Features (1): Interactive menu
+### Features 1: Interactive menu
 
 Program operates with a single loop with case statements used within the menu prompt to allow the program to follow the user's desired selection. Local variables corresponding to the three potential categories of user input (country, team, or player) are initialised as empty arrays to store user selection and prior input (see Features 2 for further elaboration on this point). Colorize, tty-prompt, Pastel, and tty-prompt were employed to enhance the interactive menu’s usability and general aesthetic. Menu input is also initialised in conjunction with tty-prompt to allow for an interactive drop-down menu of available options to either 1) search for a league, team, or player, or 2) display prior searches, or 3) exit program. This gem is important for a number of reasons, chiefly because it aids in reducing error handling but also assists with user-accessibility.
 
@@ -50,7 +49,7 @@ def out_put(length, keyword)
 end
 ```
 
-This, for example, would return the likes of: You currently have: 1 searched league, 0 searched teams, & 3 searched players. This aids in readability of the app but also helps the program conform to language conventions, handling any awkward errors relating to readability.
+This, for example, would return the likes of: You currently have: 1 searched league, 0 searched teams, & 3 searched players. This aids in readability of the app but also helps the program conform to language conventions, handling any awkward errors relating to readability. Issue with displaying saved results via 'Display' in the menu persists. Further debugging required to ascertain the issue.
 
 ### Feature 3: Exit Feature
 
@@ -107,3 +106,59 @@ Current flow chart:
 Trello was utilised as the main project management platform to track, follow, and implement project
 
 The board can be viewed [here](https://trello.com/invite/b/WUYTWQdC/e7a19ebb920aaf4491e0ef3900ed315f/ruby-app)
+
+## Help Documentation
+
+# Script
+
+# Gems
+
+At Footy Stats Look-Up!, we recommend installing Ruby Gems with bundler, a super user-friendly gem dependency manager that helps applications organise, download, and use Ruby gems and allows said gems to run in multiple environments.
+The following steps will help set up Bundler and the subsequent gems:
+Initialise the Gemfile. Initialise from application’s root folder with:
+
+```
+bundle init
+```
+
+This creates a gemfile and adds the source (https://rubygems.org) which points to the remote source for the gems to be installed.
+
+Add gems to your project with:
+
+```
+bundle add colorize
+```
+
+This installs the gem via bundle and adds it to the Gemfile as a dependency
+
+Require gem in your main file or index.rb by placing:
+
+```
+require(‘colorize’)
+```
+
+At top of your file.
+
+Alternatively, by running:
+`bundle install`
+In the terminal within your app’s root directory, bundle will read the gemfile and install the necessary gems.
+
+The current iteration of Footy Stats Look-Up! employs the following gems:
+
+[Bundler](https://rubygems.org/gems/bundler)
+[Pastel](https://rubygems.org/gems/pastel)
+[tty-prompt](https://rubygems.org/gems/tty-prompt)
+[colorize](https://rubygems.org/gems/colorize)
+[tty-font](https://rubygems.org/gems/tty-font)
+
+This iteration of the terminal app is using the following versions of each Gem:
+
+- gem "colorize", "~> 0.8.1"
+
+- gem "tty-prompt", "~> 0.23.1"
+
+-gem "tty-font", "~> 0.5.0"
+
+gem "pastel", "~> 0.8.0"
+
+It is recommended to download these versions for most optimal performance with Footy Stats Look-Up!

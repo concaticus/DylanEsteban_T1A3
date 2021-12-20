@@ -61,6 +61,19 @@ while true
         fav_player.push(player)
         # fav_player << player
 
+        #Display saved results - code not fully executing; unsure entirely what the cause is
+        when 'Display'
+            display = prompt.select("Searched", %w(Leagues Teams Players))
+            case display
+            when 'Leagues'
+                puts fav_league
+            when 'Teams'
+                puts fav_team
+            when 'Players'
+                puts fav_player
+            end
+        
+
         #Exit feature to allow user to quit program
         when 'Exit'
             puts "Are you sure you want to quit? Type 'YES' to exit or enter any key to return to main-menu"
