@@ -150,6 +150,7 @@ The current iteration of Footy Stats Look-Up! employs the following gems:
 [tty-prompt](https://rubygems.org/gems/tty-prompt)
 [colorize](https://rubygems.org/gems/colorize)
 [tty-font](https://rubygems.org/gems/tty-font)
+[rspec](https://rubygems.org/gems/rspec)
 
 This iteration of the terminal app is using the following versions of each Gem:
 
@@ -160,5 +161,7 @@ This iteration of the terminal app is using the following versions of each Gem:
 -gem "tty-font", "~> 0.5.0"
 
 gem "pastel", "~> 0.8.0"
+
+gem "rspec", "~> 3.10"
 
 It is recommended to download these versions for most optimal performance with Footy Stats Look-Up!

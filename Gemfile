@@ -6,6 +6,11 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
 
+# @client = ApiFootballV3::Client.new do |config|
+#     config.api_key = "3cb2644b3d9b2bf1350557f6c74e1a21"
+#     config.base_url = "https://v3.football.api-sports.io/"
+# end
+
 gem "colorize", "~> 0.8.1"
 
 gem "tty-prompt", "~> 0.23.1"
@@ -18,10 +23,4 @@ gem "tty-font", "~> 0.5.0"
 
 gem "pastel", "~> 0.8.0"
 
-
-@client = ApiFootballV3::Client.new do |config|
-    config.api_key = "3cb2644b3d9b2bf1350557f6c74e1a21"
-    config.base_url = "https://v3.football.api-sports.io/"
-end
-
-
+gem "rspec", "~> 3.10"

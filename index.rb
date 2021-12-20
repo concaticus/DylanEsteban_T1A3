@@ -9,11 +9,12 @@ require ('tty-prompt')
 require ('tty-table')
 require ('tty-font')
 require ('pastel')
-require ('api_football_v3')
-@client = ApiFootballV3::Client.new do |config|
-    config.api_key = "3cb2644b3d9b2bf1350557f6c74e1a21"
-    config.base_url = "https://v3.football.api-sports.io/"
-end
+require ('rspec')
+# require ('api_football_v3')
+# @client = ApiFootballV3::Client.new do |config|
+#     config.api_key = "3cb2644b3d9b2bf1350557f6c74e1a21"
+#     config.base_url = "https://v3.football.api-sports.io/"
+# end
 # prompt =
 
 
