@@ -1,5 +1,8 @@
 # Terminal Application
 
+Link to repository:
+https://github.com/dylan-devs/DylanEsteban_T1A3
+
 ## Software Development Plan
 
 Footy-Stats Look-Up! seeks to be a ruby-based terminal application that provides a user-friendly interface and operates as means for users to in-put text, save searches, and explore and interact with football (soccer) statistics that they deem relevant, interesting, or important.
@@ -90,5 +93,13 @@ When opening the Exit option, users will be prompted with a question asking whet
 
 ## Flowchart
 
-Original mind-map
+Original flow chart:
 ![Flow chart](/docs/flowchart1.png)
+
+Current flow chart:
+![Flow chart](/docs/flowchart_current.png)
+
+- same process in flow chart with the important exception of not calling and returning the Data from the API
+- other features are in tact and operational. Selections will still be inputted, saved, and can be displayed
+
+## Development Plan | Trello:
