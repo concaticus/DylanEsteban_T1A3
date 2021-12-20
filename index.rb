@@ -70,15 +70,13 @@ while true
 
         #building the exit feature to allow for quitting program
 when 'Exit'
-    puts "Are you sure you want to quit? Type 'YES' to exit or type any key to return to main-menu"
+    puts "Are you sure you want to quit? Type 'YES' to exit or enter any key to return to main-menu"
     quit_choice = gets.chomp
     break if quit_choice.downcase == 'yes' #break statement to terminate loop
     else
     # puts "Error: Invalid Input. Please try again."
     end
-    puts "Press any key to continue"
-    # gets 
     system "clear"
     
-    end
-    system "clear"
+end
+system "clear"

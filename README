@@ -1,33 +1,39 @@
-###Terminal Application
+### Terminal Application
 
-###Software Development Plan
+### Software Development Plan
+
 Footy-Stats Look-Up! seeks to be a ruby-based terminal application that provides a user-friendly interface and operates as means for users to in-put text, save searches, and explore and interact with football (soccer) statistics that they deem relevant, interesting, or important.
 
-There will be several features employed in the terminal application - which are described in greater detail below - that allow the user to interact with the terminal application wherein they can access information about their favourite players, teams, or details of a specific domestic league or competition. 
+There will be several features employed in the terminal application - which are described in greater detail below - that allow the user to interact with the terminal application wherein they can access information about their favourite players, teams, or details of a specific domestic league or competition.
 
 Statistics are important. Whilst raw data might not be accessible or meaningful to many people on it's own, when combined with a simple and user-friendly interface, it can be a powerful means for users to access, interact, and engage with stats. Often, (see old read.me)
 
-Footy Stats Look-Up seeks to alleviate the end-user's difficulty in this regard and provide a space whereby users can locate their favourite sporting teams and players statistics in an accessible manner. 
+Footy Stats Look-Up seeks to alleviate the end-user's difficulty in this regard and provide a space whereby users can locate their favourite sporting teams and players statistics in an accessible manner.
 
 Target audience primarily includes sports analysts, enthusiasts, and anyone with a general curiosity to access football (soccer) information and statistics. Additionally, this can be a means to aid e-sports players and hobbyists whose analysis, for example, relies on statistics and form for informing their fantasy-team selection
 
 Upon opening the application, the target audience will be received with straight-forward prompts. Users will have the option of searching for domestic league competitions (via ‘Country’), specific teams (via ‘Teams’) and or players (‘Players’). Included in the main-menu will be additional options to display prior searches (see Features 2 below) and an option to exit the program if they so wish. The specific searches will be saved and stored as arrays, and their details are to be displayed when entering ‘Display’ mode. The intent is to have - at the user’s disposal - a resource to research, look-up, and study their desired statistical information.
 
-
 ### Features
-## Features (1): Interactive menu 
+
+## Features (1): Interactive menu
+
 Program operates with a single loop with case statements used within the menu prompt to allow the program to follow the user's desired selection. Local variables corresponding to the three potential categories of user input (country, team, or player) are initialised as empty arrays to store user selection and prior input (see Features 2 for further elaboration on this point). Colorize, tty-prompt, Pastel, and tty-prompt were employed to enhance the interactive menu’s usability and general aesthetic. Menu input is also initialised in conjunction with tty-prompt to allow for an interactive drop-down menu of available options to either 1) search for a league, team, or player, or 2) display prior searches, or 3) exit program. This gem is important for a number of reasons, chiefly because it aids in reducing error handling but also assists with user-accessibility.
 
-
 ## Feature 2: Save and Display Prior Searches
-This feature is an important component. I wanted to ensure that there was a means by which the user's input was recorded, saved, and can be displayed and known on the home screen. User's selected input is saved in an array (‘country’, ‘team’, or ‘player’). Existing if-else statements and code was refracted into a precise single line ternary operator using short-circuit logic operators such as && to ensure efficiency of code and following principles of DRY. 
 
-```    puts (fav_league.empty? && fav_team.empty? && fav_player.empty?) ? "You have no prior searches. Let's change that!".red.italic : "You currently have: #{out_put(fav_league.length, 'league').red.italic}, #{out_put(fav_team.length, 'team').green.italic} & #{out_put(fav_player.length, 'player').blue.italic}"
+This feature is an important component. I wanted to ensure that there was a means by which the user's input was recorded, saved, and can be displayed and known on the home screen. User's selected input is saved in an array (‘country’, ‘team’, or ‘player’). Existing if-else statements and code was refracted into a precise single line ternary operator using short-circuit logic operators such as && to ensure efficiency of code and following principles of DRY.
+
+```puts (fav_league.empty? && fav_team.empty? && fav_player.empty?) ? "You have no prior searches. Let's change that!".red.italic : "You currently have: #{out_put(fav_league.length, 'league').red.italic}, #{out_put(fav_team.length, 'team').green.italic} & #{out_put(fav_player.length, 'player').blue.italic}"
+
 ```
 
 Interactive menu is built with a case statement that is declared as a local variable menu_input in conjunction with tty-prompt, allowing for users to easily choose between menu options:
-```    menu_input = prompt.select("Do you have a favourite league, team or player? Hit display to view your prior searches!", %w(League Team Player Display Exit))
+
+```menu_input = prompt.select("Do you have a favourite league, team or player? Hit display to view your prior searches!", %w(League Team Player Display Exit))
+
 ```
+
 Within the case statement, user input is instantiated as a variable and then the push() function is employed to push user input to respected arrays. In conjunction with methods used, the displayed number of searches for each category can be seen, allowing users to manually track and see their prior searches.
 
 Stored in methods.rb, the following method was employed which pluralises results if the length is not equal to 1 and allows for user-interface to display the user’s input to be returned as out_put:
@@ -41,5 +47,4 @@ end
 
 This, for example, would return the likes of: You currently have: 1 searched league, 0 searched teams, & 3 searched players. This aids in readability of the app but also helps the program conform to language conventions, handling any awkward errors relating to readability.
 
-
-## Feature 3: Exit Feature 
+## Feature 3: Exit Feature
