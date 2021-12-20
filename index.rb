@@ -47,19 +47,28 @@ while true
 
 
     case  menu_input
-    when 'League'
-    puts "Search league by country:"
+        when 'League'
+        puts "Search league by country:"
+        country = gets.chomp
+        fav_league.push(country)
 
 
-    when 'Team' 
-    puts "Search EPL team:"
-    team = gets.chomp
+        when 'Team' 
+        puts "Search EPL team:"
+        team = gets.chomp
+        fav_team.push(team)
 
-    when 'Player'
-    puts "Search player"
-    player = gets.chomp
 
-#building the exit feature to allow for quitting program
+
+        when 'Player'
+        puts "Search player:"
+        player = gets.chomp
+        fav_player.push(player)
+        # fav_player << player
+
+
+
+        #building the exit feature to allow for quitting program
 when 'Exit'
     puts "Are you sure you want to quit? Type 'YES' to exit or type any key to return to main-menu"
     quit_choice = gets.chomp
