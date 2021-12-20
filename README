@@ -99,7 +99,11 @@ Original flow chart:
 Current flow chart:
 ![Flow chart](/docs/flowchart_current.png)
 
-- same process in flow chart with the important exception of not calling and returning the Data from the API
+- same process in current flow chart with the important exception of not calling and returning the Data from the API
 - other features are in tact and operational. Selections will still be inputted, saved, and can be displayed
 
 ## Development Plan | Trello:
+
+Trello was utilised as the main project management platform to track, follow, and implement project
+
+The board can be viewed [here](https://trello.com/invite/b/WUYTWQdC/e7a19ebb920aaf4491e0ef3900ed315f/ruby-app)

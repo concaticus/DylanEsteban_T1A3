@@ -2,6 +2,8 @@
 
 # refactor when statements to use methods 
 
+# use different branches for features for API
+
 # interactive menu: issues with API calling; 
 # case  menu_input
 # when 'League'
