@@ -1,6 +1,6 @@
-### Terminal Application
+# Terminal Application
 
-### Software Development Plan
+## Software Development Plan
 
 Footy-Stats Look-Up! seeks to be a ruby-based terminal application that provides a user-friendly interface and operates as means for users to in-put text, save searches, and explore and interact with football (soccer) statistics that they deem relevant, interesting, or important.
 
@@ -14,13 +14,13 @@ Target audience primarily includes sports analysts, enthusiasts, and anyone with
 
 Upon opening the application, the target audience will be received with straight-forward prompts. Users will have the option of searching for domestic league competitions (via ‘Country’), specific teams (via ‘Teams’) and or players (‘Players’). Included in the main-menu will be additional options to display prior searches (see Features 2 below) and an option to exit the program if they so wish. The specific searches will be saved and stored as arrays, and their details are to be displayed when entering ‘Display’ mode. The intent is to have - at the user’s disposal - a resource to research, look-up, and study their desired statistical information.
 
-### Features
+## Features
 
-## Features (1): Interactive menu
+### Features (1): Interactive menu
 
 Program operates with a single loop with case statements used within the menu prompt to allow the program to follow the user's desired selection. Local variables corresponding to the three potential categories of user input (country, team, or player) are initialised as empty arrays to store user selection and prior input (see Features 2 for further elaboration on this point). Colorize, tty-prompt, Pastel, and tty-prompt were employed to enhance the interactive menu’s usability and general aesthetic. Menu input is also initialised in conjunction with tty-prompt to allow for an interactive drop-down menu of available options to either 1) search for a league, team, or player, or 2) display prior searches, or 3) exit program. This gem is important for a number of reasons, chiefly because it aids in reducing error handling but also assists with user-accessibility.
 
-## Feature 2: Save and Display Prior Searches
+### Feature 2: Save and Display Prior Searches
 
 This feature is an important component. I wanted to ensure that there was a means by which the user's input was recorded, saved, and can be displayed and known on the home screen. User's selected input is saved in an array (‘country’, ‘team’, or ‘player’). Existing if-else statements and code was refracted into a precise single line ternary operator using short-circuit logic operators such as && to ensure efficiency of code and following principles of DRY.
 
@@ -49,7 +49,7 @@ end
 
 This, for example, would return the likes of: You currently have: 1 searched league, 0 searched teams, & 3 searched players. This aids in readability of the app but also helps the program conform to language conventions, handling any awkward errors relating to readability.
 
-## Feature 3: Exit Feature
+### Feature 3: Exit Feature
 
 Case statement was used for Exit Feature as part of main-menu to provide options to users. When ‘Exit’ is selected, a prompt is offered asking the user if they wish to continue. Option_yes is initialised as a variable for gets.chomp in order for the following ‘break if’ statement to be executed if the user does indeed wish to exit:
 
@@ -80,3 +80,15 @@ Consequently, and as a result of the scale-back, future.rb was created to act as
 - Specific error handling mechanisms to deal with misspelt input
 - Table in ‘Display’ to contrast selected players stats side by side
 - These aspects will be returned to in future to bring some elements of Footy Stats Look-up! closer to original application design plan but also further in scope and utility.
+
+## Interaction & Experience
+
+With each feature, care has been taken to make all aspects of usability as intuitive as possible. Upon opening Footy Stats Look-Up! the user will be greeted by a colourful opening title, as well as a colorized prompt nudging the user to make a selection. Underneath the title and prompt, an interactive menu will be displayed on screen.
+
+From here, the user has the choice to select and search for their favourite teams, players, or leagues by selecting from the available drop-down menu, courtesy of the tty-prompt gem. Further, the interactive menu will also provide a display feature whereby prior searches can be displayed next to each other, but also an option to leave the program, which will activate the exit feature. Searches made, be they from the category of countries, players, or teams, will be stored and displayed in the app’s main-menu. Colorize has been employed to distinguish between the various searches, allowing the user a more aesthetically pleasing experience but also assisting in readability by giving different colours for each category searched.
+When opening the Exit option, users will be prompted with a question asking whether they wish to continue using the application and return to the main-menu or they are given the option of exiting the program. Errors, such as those with the exit feature, have been minimised with the use of helpful prompts and break if statement which will break the loop and allow the user to return to main-menu if they choose to continue with the program.
+
+## Flowchart
+
+Original mind-map
+![Flow chart](/docs/flowchart1.png)
