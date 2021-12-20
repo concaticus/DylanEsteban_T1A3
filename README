@@ -24,13 +24,15 @@ Program operates with a single loop with case statements used within the menu pr
 
 This feature is an important component. I wanted to ensure that there was a means by which the user's input was recorded, saved, and can be displayed and known on the home screen. User's selected input is saved in an array (‘country’, ‘team’, or ‘player’). Existing if-else statements and code was refracted into a precise single line ternary operator using short-circuit logic operators such as && to ensure efficiency of code and following principles of DRY.
 
-```puts (fav_league.empty? && fav_team.empty? && fav_player.empty?) ? "You have no prior searches. Let's change that!".red.italic : "You currently have: #{out_put(fav_league.length, 'league').red.italic}, #{out_put(fav_team.length, 'team').green.italic} & #{out_put(fav_player.length, 'player').blue.italic}"
+```ruby
+puts (fav_league.empty? && fav_team.empty? && fav_player.empty?) ? "You have no prior searches. Let's change that!".red.italic : "You currently have: #{out_put(fav_league.length, 'league').red.italic}, #{out_put(fav_team.length, 'team').green.italic} & #{out_put(fav_player.length, 'player').blue.italic}"
 
 ```
 
 Interactive menu is built with a case statement that is declared as a local variable menu_input in conjunction with tty-prompt, allowing for users to easily choose between menu options:
 
-```menu_input = prompt.select("Do you have a favourite league, team or player? Hit display to view your prior searches!", %w(League Team Player Display Exit))
+```ruby
+menu_input = prompt.select("Do you have a favourite league, team or player? Hit display to view your prior searches!", %w(League Team Player Display Exit))
 
 ```
 
@@ -38,7 +40,7 @@ Within the case statement, user input is instantiated as a variable and then the
 
 Stored in methods.rb, the following method was employed which pluralises results if the length is not equal to 1 and allows for user-interface to display the user’s input to be returned as out_put:
 
-```
+```ruby
 # menu for interface method
 def out_put(length, keyword)
     return "#{length} searched #{keyword}#{'s' if length != 1}"
@@ -48,3 +50,33 @@ end
 This, for example, would return the likes of: You currently have: 1 searched league, 0 searched teams, & 3 searched players. This aids in readability of the app but also helps the program conform to language conventions, handling any awkward errors relating to readability.
 
 ## Feature 3: Exit Feature
+
+Case statement was used for Exit Feature as part of main-menu to provide options to users. When ‘Exit’ is selected, a prompt is offered asking the user if they wish to continue. Option_yes is initialised as a variable for gets.chomp in order for the following ‘break if’ statement to be executed if the user does indeed wish to exit:
+
+```ruby
+        #Exit feature to allow user to quit program
+        when 'Exit'
+            puts "Are you sure you want to quit? Type 'YES' to exit or enter any key to return to main-menu"
+            option_yes = gets.chomp
+            break if option_yes == 'yes' #break statement to terminate loop
+            else
+                end #end loop and exit case statement and return to main-menu
+                system "clear"
+```
+
+The ‘break if’ statement ends the program’s loop and transfers control out of the block of code, out of the iterator that had invoked the block, and moves to the first expression following the iterator. If selected, the program ends and the system is cleared. The alternative
+
+To handle any input errors, the only alternative is that the input of any key will end the case statement and loop back to the beginning of the program. This will immediately return the user to the main-menu to remain in the program and continue with their session.
+
+## Some reflections on features and implementation:
+
+With respect to the present terminal app, a central component that was primarily envisioned was it’s interaction with an external API. Some issues were encountered whilst using it, and with reference to the documentation, implementation was slow and challenging. A decision was chosen to not pursue its implementation in this iteration due to time-constraints and difficulties with it’s application and implementation. Despite this short-coming, the present app still functions smoothly, and it’s other features listed above are all operational and working, ensuring it meets minimum requirements for assessment.
+
+Consequently, and as a result of the scale-back, future.rb was created to act as a repository for some edited out and unused code, as well as notes and ideas for future iterations of this app. Future iterations and features of consideration include, amongst others:
+
+- Drop-down menu for English Premier League teams to mitigate against error handling of user-input
+- Newer and more reliable API as current API has not been updated to include
+- Refactoring of case statements to use more methods for lesser and cleaner code
+- Specific error handling mechanisms to deal with misspelt input
+- Table in ‘Display’ to contrast selected players stats side by side
+- These aspects will be returned to in future to bring some elements of Footy Stats Look-up! closer to original application design plan but also further in scope and utility.

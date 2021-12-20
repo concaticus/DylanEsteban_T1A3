@@ -33,10 +33,6 @@ fav_player = []
 
 #menu loop + gems: colorize, tty-prompt, pastel, tty-font
 while true 
-    # puts "Hi! Welcome to Footy Stats Look-Up!"
-    # puts pastel.red("Unicorns!")
-    # puts pastel.red.on_green.bold("Unicorns!")
-    # puts pastel.decorate("Hi! Welcome to Footy Stats Look-Up!", :green, :on_white, :bold)
     puts pastel.yellow.bold(font.write("Footy Stats Look-Up!"))
 
     #ternary opterator employed to keep code DRY
@@ -45,7 +41,7 @@ while true
     #menu user-input + Gem
     menu_input = prompt.select("Do you have a favourite league, team or player? Hit display to view your prior searches!", %w(League Team Player Display Exit))
 
-
+    #case statement for menu options + push() function to send results to array
     case  menu_input
         when 'League'
         puts "Search league by country:"
@@ -59,24 +55,22 @@ while true
         fav_team.push(team)
 
 
-
         when 'Player'
         puts "Search player:"
         player = gets.chomp
         fav_player.push(player)
         # fav_player << player
 
-
-
-        #building the exit feature to allow for quitting program
-when 'Exit'
-    puts "Are you sure you want to quit? Type 'YES' to exit or enter any key to return to main-menu"
-    quit_choice = gets.chomp
-    break if quit_choice.downcase == 'yes' #break statement to terminate loop
-    else
-    # puts "Error: Invalid Input. Please try again."
-    end
-    system "clear"
-    
+        #Exit feature to allow user to quit program
+        when 'Exit'
+            puts "Are you sure you want to quit? Type 'YES' to exit or enter any key to return to main-menu"
+            option_yes = gets.chomp
+            break if option_yes == 'yes' #break statement to terminate loop 
+            else
+                end #end loop and exit case statement and return to main-menu
+                system "clear"
+        
 end
 system "clear"
+
+
